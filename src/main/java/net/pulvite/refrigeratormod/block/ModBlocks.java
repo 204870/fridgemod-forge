@@ -16,6 +16,7 @@ import java.util.List;
 import java.util.function.Supplier;
 import net.pulvite.refrigeratormod.RefrigeratorMod;
 import net.pulvite.refrigeratormod.item.ModItems;
+import net.pulvite.refrigeratormod.block.custom.RefrigeratorBlock;
 
 
 public class ModBlocks {
@@ -25,6 +26,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> REFINED_ICE = registerBlock("refined_ice",
             () -> new Block(BlockBehaviour.Properties.of(Material.METAL)
                     .friction(1.1f)), CreativeModeTab.TAB_MATERIALS);
+
+
+    public static final RegistryObject<Block> REFRIGERATOR = registerBlock("refrigerator",
+            () -> new RefrigeratorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()),
+            CreativeModeTab.TAB_DECORATIONS);
 
     //block registry stuff
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block,

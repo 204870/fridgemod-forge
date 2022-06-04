@@ -14,6 +14,7 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.pulvite.refrigeratormod.block.ModBlocks;
+import net.pulvite.refrigeratormod.block.entity.ModBlockEntities;
 import net.pulvite.refrigeratormod.item.ModItems;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -42,6 +43,8 @@ public class RefrigeratorMod
 
         ModItems.register(eventBus);
         ModBlocks.register(eventBus);
+
+        ModBlockEntities.register(eventBus);
 
         eventBus.addListener(this::setup);
 
